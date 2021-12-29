@@ -1,0 +1,13 @@
+<div class=" px-[20px] flex flex-col items-center" >
+<app-add-todo (eventEmitter)="getTodo($event)" ></app-add-todo>
+    
+    <h3 class="text-[30px] font-bold"  >Your Todo's here</h3>
+    <div *ngFor="let todo of todos;index as i"  >
+        <app-todos-items (Checking)="getChecked($event)" [i]='i' (deletingTodo)="deleteTodo($event)" [todo]="todo"  ></app-todos-items>
+    </div>
+    <div [ngClass]="{'hidden':todos.length!==0}" class="" >
+        <h3 class="text-xl mt-[10px] font-semibold" >No Todos To display</h3>
+
+    </div>
+
+</div>

@@ -1,0 +1,36 @@
+<div *ngIf="Client===false; else elseBlock" class="flex flex-col justify-center my-[20px] gap-[10px] px-[20px] items-center" >
+    <h2 class="text-[28px] font-semibold" >Welcome to To-Do app</h2>
+    <h3 class=" text-center max-w-[700px] mb-[40px] text-[20px]" >Here is something amazing for you fill out this form with your details and next time when you visit this page you will see your information written here. <br> No need to worry because no back-end is connected to this site and your data will remain in your browser's local storage</h3>
+    <form (ngSubmit)="getDetails($event)" class="flex flex-col items-start justify-center">
+        <div class="flex items-center gap-4" > 
+            <label for="Name" class="text-[22px] mr-[40px] max-w-[80px] font-semibold" >Name</label>
+            <input type="text" [(ngModel)]="Name" required name="Name" id="Name" placeholder="Enter your task Name" class="border border-black border-opacity-20 px-[15px] py-[7px] outline-none rounded-lg  " >
+        </div>
+        <div class="flex items-center mt-[20px]" > 
+            <label for="Proffession" class="text-[22px] mr-[40px] max-w-[80px] font-semibold" >Gender</label>
+            <input type="text" placeholder="Male or female" name="Proffession"  id='Proffession' [(ngModel)]="Proffession" class="border border-black border-opacity-20 px-[15px] py-[7px] outline-none rounded-lg  " >
+        </div>
+        <button type="submit" class="bg-blue-500 mt-[30px] px-[30px] ml-[120px] py-[8px] rounded-lg " >Add</button>
+    </form>
+
+   
+</div>
+<ng-template #elseBlock  >
+    <div class="flex flex-col justify-center items-center">
+
+        <div class="my-[20px] px-[100px] flex flex-col justify-center items-start" >
+            <div class="flex gap-12">
+
+                <h3 class="text-[26px] font-semibold" >Name: </h3>
+                <h3 class="text-[26px] font-semibold" >{{Client.name}} </h3>
+        </div>
+        <div class="flex gap-12">
+
+            <h3 class="text-[26px] font-semibold" >Gender: </h3>
+            <h3 class="text-[26px] font-semibold" >{{Client.gender}} </h3>
+        </div>
+        <button type="submit" (click)="Update()" class="bg-blue-500 mt-[30px] px-[30px] ml-[50px] py-[8px] rounded-lg " >Update</button>
+
+    </div>
+</div>
+</ng-template>
