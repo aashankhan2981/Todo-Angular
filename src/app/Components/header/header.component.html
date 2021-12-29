@@ -1,9 +1,27 @@
 
-<div class="bg-[#3DA9FC] flex items-center mx-auto px-[120px] py-[16px] justify-between" >
-    <a routerLink="/" class="text-white font-bold text-3xl" >ToDo-App</a>
+<div class="bg-[#3DA9FC]   " >
+  <div class=" hidden md:flex items-center  px-[60px] lg:px-[120px] py-[16px] justify-between">
+
+    <a routerLink="/" class="text-white font-bold text-2xl lg:text-3xl" >ToDo-App</a>
     <input type="text" name="search" id="search" placeholder="Search" class="px-[30px] rounded-lg text-[15px] font-normal  outline-none py-[10px]" >
     <div class="flex items-center justify-center gap-[40px]" >
-      <a class="text-white font-bold text-2xl" routerLink="/">Home</a>
-      <a class="text-white font-bold text-2xl" routerLink="/about">About</a>
+      <a class="text-white font-bold text-xl text-2xl" routerLink="/">Home</a>
+      <a class="text-white font-bold text-xl text-2xl" routerLink="/about">About</a>
     </div>
+  </div>
+  <div class="md:hidden gap-12 relative flex px-[60px] py-[16px] items-center justify-between" >
+    <a routerLink="/" class="text-white font-bold text-2xl  sm:text-3xl" >ToDo-App</a>
+    <div (click)="Menu()" class=" cursor-pointer" >
+      <svg width="31" height="18" viewBox="0 0 31 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 1.25C0 0.559644 0.559644 0 1.25 0H29.75C30.4404 0 31 0.559644 31 1.25C31 1.94036 30.4404 2.5 29.75 2.5H1.25C0.559645 2.5 0 1.94036 0 1.25Z" fill="white"/>
+        <path d="M0 9.25C0 8.55964 0.559644 8 1.25 8H29.6562C30.3466 8 30.9062 8.55964 30.9062 9.25C30.9062 9.94036 30.3466 10.5 29.6562 10.5H1.25C0.559645 10.5 0 9.94036 0 9.25Z" fill="white"/>
+        <path d="M0.09375 16.5C0.09375 15.8096 0.653394 15.25 1.34375 15.25H29.75C30.4404 15.25 31 15.8096 31 16.5C31 17.1904 30.4404 17.75 29.75 17.75H1.34375C0.653395 17.75 0.09375 17.1904 0.09375 16.5Z" fill="white"/>
+      </svg>
+    </div>
+    <div [ngClass]="{'hidden':!toggle}" class=" text-white font-bold text-xl absolute left-0 top-[64px] flex flex-col items-center justify-center  h-[150px] w-screen bg-[#3DA9FC] bg-opacity-60" >
+      <a class="hover:bg-white hover:text-black w-screen text-center py-[10px] " (click)="Menu()" routerLink="/">Home</a>
+      <a class="hover:bg-white hover:text-black w-screen text-center py-[10px]" (click)="Menu()" routerLink="/about">About</a>
+    </div>
+      
+  </div>
   </div>
