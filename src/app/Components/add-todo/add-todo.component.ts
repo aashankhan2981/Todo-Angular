@@ -23,6 +23,8 @@ export class AddTodoComponent implements OnInit {
       active:true
     }
     this.eventEmitter.emit(todoItem)
+    this.title=''
+    this.desc=''
   }
   else{
     alert("Plz fill the fields first")
